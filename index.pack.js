@@ -402,13 +402,34 @@ var _data = __webpack_require__(6);
 
 var _data2 = _interopRequireDefault(_data);
 
+var _Navbar = __webpack_require__(17);
+
+var _Navbar2 = _interopRequireDefault(_Navbar);
+
+var _Hero = __webpack_require__(18);
+
+var _Hero2 = _interopRequireDefault(_Hero);
+
+var _Card = __webpack_require__(19);
+
+var _Card2 = _interopRequireDefault(_Card);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
     return _react2.default.createElement(
-        "h1",
+        "div",
         null,
-        "something"
+        _react2.default.createElement(_Navbar2.default, null),
+        _react2.default.createElement(_Hero2.default, null),
+        _react2.default.createElement(_Card2.default, {
+            img: "katie-zaferes.png",
+            rating: 5.0,
+            reviewCount: 6,
+            country: "USA",
+            title: "Life Lessons with Katie Zaferes",
+            price: 136
+        })
     );
 }
 
@@ -30542,6 +30563,151 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Navbar() {
+    return _react2.default.createElement(
+        "nav",
+        null,
+        _react2.default.createElement("img", { src: "./images/airbnb-logo.png", className: "nav--logo", alt: "airbnb logo" })
+    );
+}
+
+exports.default = Navbar;
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Hero() {
+    return _react2.default.createElement(
+        'section',
+        { className: 'hero' },
+        _react2.default.createElement('img', {
+            src: './images/photo-grid.png',
+            className: 'hero--image',
+            alt: 'hero'
+        }),
+        _react2.default.createElement(
+            'div',
+            { className: 'hero--text' },
+            _react2.default.createElement(
+                'h1',
+                null,
+                'Online Experiences'
+            ),
+            _react2.default.createElement(
+                'h3',
+                null,
+                'Join unique interactive activities led by one-of-a-kind hosts\u2014all without leaving home.'
+            )
+        )
+    );
+}
+
+exports.default = Hero;
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Card(props) {
+    return _react2.default.createElement(
+        'section',
+        { className: 'card' },
+        _react2.default.createElement('img', {
+            src: './images/' + props.img,
+            className: 'card--image',
+            alt: 'card'
+        }),
+        _react2.default.createElement(
+            'div',
+            { className: 'card--text' },
+            _react2.default.createElement(
+                'div',
+                { className: 'card--stats' },
+                _react2.default.createElement('img', { src: '../images/star.png', className: 'card--star' }),
+                _react2.default.createElement(
+                    'span',
+                    null,
+                    props.rating
+                ),
+                _react2.default.createElement(
+                    'span',
+                    { className: 'gray' },
+                    '(',
+                    props.reviewCount,
+                    ') \u2022 '
+                ),
+                _react2.default.createElement(
+                    'span',
+                    { className: 'gray' },
+                    props.location
+                )
+            ),
+            _react2.default.createElement(
+                'p',
+                null,
+                props.title
+            ),
+            _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                    'span',
+                    { className: 'bold' },
+                    'From $',
+                    props.price
+                ),
+                ' / person'
+            )
+        )
+    );
+}
+
+exports.default = Card;
 
 /***/ })
 /******/ ]);
